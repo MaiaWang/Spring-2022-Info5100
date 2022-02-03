@@ -20,6 +20,13 @@ public class Main {
         grade('A');
         grade('F');
 
+        Box box = new Box(1.0,2.0,3.0);
+        System.out.println(volumeOfBox(box));
+
+
+
+
+
     }
 
     //Question 1: Write a program find if String is Palindrome?
@@ -199,42 +206,46 @@ public class Main {
     }
 
     //Question 10: Implement a class Box
-    public class Box {
+    public static class Box {
         double width;
         double height;
         double depth;
 
-        public void Box(double width, double height, double depth){
-            this.depth = depth;
-            this.height = height;
+        public Box(double width, double height, double depth) {
             this.width = width;
+            this.height = height;
+            this.depth = depth;
         }
 
-        public double getWidth(){
+        public double getWidth() {
             return width;
         }
 
-        public double getHeight(){
+        public double getHeight() {
             return height;
         }
 
-        public double getDepth(){
+        public double getDepth() {
             return depth;
         }
 
-        public void setWidth(double width){
+        public void setWidth(double width) {
             this.width = width;
         }
 
-        public void setDepth(double depth){
+        public void setDepth(double depth) {
             this.depth = depth;
         }
 
-        public void setHeight(double height){
+        public void setHeight(double height) {
             this.height = height;
         }
 
+
     }
 
+    public static double volumeOfBox(Box box){
+        return box.height* box.depth * box.width;
+    }
     //Initialize the value through constructor. Write a function to calculate the box volume.
 }
