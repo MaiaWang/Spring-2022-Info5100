@@ -44,13 +44,37 @@ public class Main {
             }
         }
         return true;
-
     }
 
     //Question 3. Write a program to check if string contains duplicates
-    //
+    public static boolean ifDuplicate (String s){
+        if(s == null || s.length() == 0) return false;
+        Map<Character, Integer> map = new HashMap<>();
+        for(char c : s.toCharArray()){
+            if(map.containsKey(c)){
+                return true;
+            }else{
+                map.put(c,1);
+            }
+        }
+        return false;
+    }
+
     //Question 4: Write a program to check if two strings are anagrams. Anagrams are strings which can be made by rearranging characters in string.
-    //
+    public static boolean ifAnagrams (String a, String b){
+        if(a.length() != b.length()) return false;
+        int first = 0;
+        int second = b.length() - 1;
+        while (second >= 0){
+            if(a.charAt(first) != b.charAt(second)){
+                return false;
+            }else{
+                first ++;
+                second --;
+            }
+        }
+        return true;
+    }
     //Question 5:  Write a program to determine whether the year is a leap year or not.
     //
     //Leap Years are any year that can be evenly divided by 4.  A year that is evenly divisible by 100 is a leap year only if it is also evenly divisible by 400.
