@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -8,10 +11,14 @@ public class Main {
         System.out.println(isPalindrome("12n66n21"));
         System.out.println(isPalindrome("1232"));
 
+        System.out.println(ifAllUnique("abcdefg"));
+        System.out.println(ifAllUnique("aguobhdfqg"));
+
     }
 
     //Question 1: Write a program find if String is Palindrome?
     public static boolean isPalindrome (String s){
+        if(s == null || s.length() == 0) return true;
         int left = 0;
         int right = s.length()-1;
         while(left < right){
@@ -26,7 +33,20 @@ public class Main {
     }
 
     //Question2: Write a program to check if a string has all unique characters.
-    //
+    public static boolean ifAllUnique(String s){
+        if(s == null || s.length() == 0) return true;
+        Map<Character, Integer> map = new HashMap<>();
+        for(char c : s.toCharArray()){
+            if(map.containsKey(c)){
+                return false;
+            }else{
+                map.put(c,1);
+            }
+        }
+        return true;
+
+    }
+
     //Question 3. Write a program to check if string contains duplicates
     //
     //Question 4: Write a program to check if two strings are anagrams. Anagrams are strings which can be made by rearranging characters in string.
